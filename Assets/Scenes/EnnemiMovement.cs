@@ -6,10 +6,17 @@ public class EnnemiMovement : MonoBehaviour
     public float leftLimit = -150f;
     public float rightLimit = 150f;
     private int direction = 1;
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
         HorizontalMovement();
+        FlipSprite();
     }
 
     void HorizontalMovement()
@@ -21,5 +28,11 @@ public class EnnemiMovement : MonoBehaviour
             direction = -1;
         else if (transform.position.x <= leftLimit)
             direction = 1;
+    }
+
+    void FlipSprite()
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.flipX = direction == -1;
     }
 }
