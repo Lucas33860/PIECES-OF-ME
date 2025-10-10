@@ -13,6 +13,15 @@ public class PlayerRespawn : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            Debug.Log("Le joueur a touché le boss !");
+            Respawn();
+        }
+    }
+
     void Update()
     {
         // Si le joueur tombe trop bas
@@ -34,13 +43,12 @@ public class PlayerRespawn : MonoBehaviour
         }
     }
 
-    // Si on entre en collision avec un checkpoint
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Checkpoint"))
         {
             respawnPoint = collision.transform.position;
-            Debug.Log("✅ Nouveau checkpoint activé : " + respawnPoint);
         }
     }
 }
