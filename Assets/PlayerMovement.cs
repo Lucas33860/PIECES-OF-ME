@@ -39,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = baseGravity;
+        }
     }
-}
+
+
 
     public void Move(InputAction.CallbackContext context)
     {
