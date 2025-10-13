@@ -1156,6 +1156,7 @@ MonoBehaviour:
   baseGravity: 2
   maxFallSpeed: 18
   fallSpeedMultiplier: 2
+  sprintSpeed: 10
 --- !u!114 &674380056
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,12 +21,28 @@ public class PlayerMovement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
 
+    public float sprintSpeed = 10f;
+
 
     // Update is called once per frame
     void Update()
     {
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Gravity();
+    }
+
+        public void Move(InputAction.CallbackContext context)
+    {
+        horizontalMovement = context.ReadValue<Vector2>().x;
+
+        if (Keyboard.current.leftShiftKey.isPressed)
+        {
+            moveSpeed = sprintSpeed;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
     }
 
     private void Gravity()
@@ -44,10 +60,6 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    public void Move(InputAction.CallbackContext context)
-    {
-        horizontalMovement = context.ReadValue<Vector2>().x;
-    }
 
     public void Jump(InputAction.CallbackContext context)
     {
