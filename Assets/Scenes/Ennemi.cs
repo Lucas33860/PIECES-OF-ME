@@ -12,7 +12,7 @@ public class Ennemi : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 1f)
+        if (timer >= 0.5f)
         {
             SpawnBullet();
             timer = 0f;
@@ -26,7 +26,7 @@ public class Ennemi : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = Vector2.down * 5f; 
+            rb.linearVelocity = Vector2.down * 7f; 
         }
     }
 }
