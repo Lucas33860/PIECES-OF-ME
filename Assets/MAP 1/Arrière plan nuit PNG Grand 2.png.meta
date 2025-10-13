@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f43d662eaf1964bcab806f4f4b3665b2
+guid: afbd66abb8c274051a898a0d1733b5a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -855298285791758126
-    second: 1_0
+      213: 1162034328202399378
+    second: "Arrie\u0300re plan nuit PNG Grand 2_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_0
+      name: "Arrie\u0300re plan nuit PNG Grand 2_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 576
-        height: 324
+        width: 1046
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d8b16a9dbe5124f0800000000000000
-      internalID: -855298285791758126
+      spriteID: 29e40559010602010800000000000000
+      internalID: 1162034328202399378
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1_0: -855298285791758126
+      "Arrie\u0300re plan nuit PNG Grand 2_0": 1162034328202399378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
