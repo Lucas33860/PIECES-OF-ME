@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float sprintSpeed = 10f;
 
+    public Transform playerSprite;
+
 
     // Update is called once per frame
     void Update()
@@ -31,9 +33,14 @@ public class PlayerMovement : MonoBehaviour
         Gravity();
     }
 
-        public void Move(InputAction.CallbackContext context)
+    public void Move(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
+        if(horizontalMovement != 0)
+        {
+            playerSprite.localScale = new Vector3(horizontalMovement, 1, 1);
+        }
+        
 
         if (Keyboard.current.leftShiftKey.isPressed)
         {
