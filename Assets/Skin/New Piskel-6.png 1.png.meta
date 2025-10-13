@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      New Piskel-6.png 1_0: -8414646570100245437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
