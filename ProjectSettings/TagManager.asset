@@ -8,6 +8,9 @@ TagManager:
   - Decor
   - Checkpoint
   - Boss
+  - FinNiv1
+  - FinNiv2
+  - FinNiv3
   layers:
   - Default
   - TransparentFX

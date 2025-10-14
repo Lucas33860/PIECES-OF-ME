@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Movement : MonoBehaviour
 {
@@ -10,24 +11,50 @@ public class Movement : MonoBehaviour
     private float currentSpeed = 0f;
     private float targetSpeed = 0f;
 
+    private Coroutine rotateCoroutine = null;
+
+    private IEnumerator RotateOverTime(float angle, float duration)
+    {
+        Quaternion startRotation = transform.rotation;
+        Quaternion endRotation = startRotation * Quaternion.Euler(0f, 0f, angle);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = endRotation;
+    }
+
     void Update()
     {
         float moveInput = 0f;
+        float baseRotationSpeed = 360f; // Vitesse de rotation de base (degrés/seconde)
+        float rotationSpeed = baseRotationSpeed;
 
-       
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rotationSpeed *= 2f; // Double la vitesse de rotation quand on sprinte
+        }
+
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             moveInput = -1f;
+            // Tourne plus vite vers la gauche
+            transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
+            // Tourne plus vite vers la droite
+            transform.Rotate(0f, 0f, -rotationSpeed * Time.deltaTime);
         }
+        // Plus besoin de coroutine pour la rotation continue
 
-       
         float maxCurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : maxSpeed;
 
-       
         targetSpeed = moveInput * maxCurrentSpeed;
 
         if (Mathf.Abs(targetSpeed) > 0.01f)
@@ -36,7 +63,6 @@ public class Movement : MonoBehaviour
         }
         else
         {
-    
             currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
         }
 
