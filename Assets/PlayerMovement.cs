@@ -23,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float sprintSpeed = 10f;
 
+    
+    public AudioSource audioSource;
     public Transform playerSprite;
-
 
     public Animator animator;
 
@@ -45,8 +46,15 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalMovement != 0)
         {
             playerSprite.localScale = new Vector3(horizontalMovement, 1, 1);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
-
+        else
+        {
+            audioSource.Stop();
+        }
 
 
         if (Keyboard.current.leftShiftKey.isPressed)
