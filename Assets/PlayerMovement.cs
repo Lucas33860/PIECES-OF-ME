@@ -26,21 +26,28 @@ public class PlayerMovement : MonoBehaviour
     public Transform playerSprite;
 
 
+    public Animator animator;
+
+
     // Update is called once per frame
     void Update()
     {
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Gravity();
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
     }
+
 
     public void Move(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
-        if(horizontalMovement != 0)
+
+        if (horizontalMovement != 0)
         {
             playerSprite.localScale = new Vector3(horizontalMovement, 1, 1);
         }
-        
+
+
 
         if (Keyboard.current.leftShiftKey.isPressed)
         {
