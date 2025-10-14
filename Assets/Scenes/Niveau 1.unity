@@ -530,7 +530,8 @@ MonoBehaviour:
   - With your head, you can roll around the world. Use the left and right arrows,
     or Q and D. You can sprint with leftshift. Good luck !
   vitesseEcriture: 0.03
-  tempsEntreTextes: 2
+  tempsEntreTextes: 2.5
+  panel: {fileID: 1476441493}
 --- !u!4 &346949456
 Transform:
   m_ObjectHideFlags: 0
