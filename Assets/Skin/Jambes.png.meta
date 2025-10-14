@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jambes_0: 5667035398969150000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
