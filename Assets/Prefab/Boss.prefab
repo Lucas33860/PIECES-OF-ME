@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9b235678bec4e509f3f87614e78416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BossDeadSound: {fileID: 0}
   rayOrigin: {fileID: 5245872339147036254}
 --- !u!61 &620167962530402264
 BoxCollider2D:

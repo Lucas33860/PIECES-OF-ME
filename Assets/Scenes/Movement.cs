@@ -11,7 +11,9 @@ public class Movement : MonoBehaviour
     private float currentSpeed = 0f;
     private float targetSpeed = 0f;
 
-    private Coroutine rotateCoroutine = null;
+    public AudioSource audioSource;
+
+    public AudioSource pushSound;
 
     private IEnumerator RotateOverTime(float angle, float duration)
     {
@@ -44,12 +46,27 @@ public class Movement : MonoBehaviour
             moveInput = -1f;
             // Tourne plus vite vers la gauche
             transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
             // Tourne plus vite vers la droite
             transform.Rotate(0f, 0f, -rotationSpeed * Time.deltaTime);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Pause();
+            }
         }
         // Plus besoin de coroutine pour la rotation continue
 
@@ -67,5 +84,26 @@ public class Movement : MonoBehaviour
         }
 
         transform.position += new Vector3(currentSpeed * Time.deltaTime, 0f, 0f);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boite"))
+        {
+            if (pushSound != null && !pushSound.isPlaying)
+            {
+                pushSound.Play();
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boite"))
+        {
+            if (pushSound != null && pushSound.isPlaying)
+            {
+                pushSound.Stop();
+            }
+        }
     }
 }
