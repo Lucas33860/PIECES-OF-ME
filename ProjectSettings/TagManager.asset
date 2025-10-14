@@ -12,6 +12,7 @@ TagManager:
   - FinNiv2
   - FinNiv3
   - Boite
+  - Jambes
   layers:
   - Default
   - TransparentFX
