@@ -11,6 +11,7 @@ TagManager:
   - FinNiv1
   - FinNiv2
   - FinNiv3
+  - Boite
   layers:
   - Default
   - TransparentFX

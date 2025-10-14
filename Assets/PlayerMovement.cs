@@ -25,7 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform playerSprite;
 
+    public AudioSource WalkSound;
 
+    public AudioSource JumpSound;
+    
+    
     public Animator animator;
 
 
@@ -42,12 +46,23 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovement = context.ReadValue<Vector2>().x;
 
-        if (horizontalMovement != 0)
+        // Flip sprite based on movement direction
+        if (horizontalMovement != 0 && isGrounded())
         {
-            playerSprite.localScale = new Vector3(horizontalMovement, 1, 1);
+            playerSprite.localScale = new Vector3(Mathf.Sign(horizontalMovement), 1, 1);
+
+            if (!WalkSound.isPlaying)
+            {
+            WalkSound.Play();
+            }
         }
-
-
+        else
+        {
+            if (WalkSound.isPlaying)
+            {
+            WalkSound.Pause();
+            }
+        }
 
         if (Keyboard.current.leftShiftKey.isPressed)
         {
@@ -80,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded()) {
             if (context.performed)
             {
+                JumpSound.Play();
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             }
             else if (context.canceled)

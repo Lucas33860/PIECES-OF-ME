@@ -6,6 +6,8 @@ public class Ennemi : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    public AudioSource EnemyShootSound;
+
 
 
     // Update is called once per frame
@@ -15,6 +17,10 @@ public class Ennemi : MonoBehaviour
         if (timer >= 0.5f)
         {
             SpawnBullet();
+            if (EnemyShootSound != null && EnemyShootSound.clip != null)
+            {
+                AudioSource.PlayClipAtPoint(EnemyShootSound.clip, transform.position);
+            }
             timer = 0f;
         }
     }
