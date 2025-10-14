@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using TMPro; // important si vous utilisez TextMeshPro
+using TMPro;
 
 public class DialogueIntro : MonoBehaviour
 {
@@ -10,8 +10,13 @@ public class DialogueIntro : MonoBehaviour
     public float vitesseEcriture = 0.04f; // vitesse d'apparition des lettres
     public float tempsEntreTextes = 1.5f; // temps avant d'effacer et passer au suivant
 
+    public GameObject panel; // 👈 le panel à cacher à la fin
+
     private void Start()
     {
+        if (panel != null)
+            panel.SetActive(true); // s'assurer que le panel est visible au début
+
         StartCoroutine(AfficherTextes());
     }
 
@@ -19,8 +24,10 @@ public class DialogueIntro : MonoBehaviour
     {
         foreach (string texte in textes)
         {
-            // écriture lettre par lettre
+            // effacer immédiatement le texte précédent
             texteUI.text = "";
+
+            // écriture lettre par lettre
             foreach (char lettre in texte.ToCharArray())
             {
                 texteUI.text += lettre;
@@ -30,7 +37,7 @@ public class DialogueIntro : MonoBehaviour
             // attendre un peu avant d'effacer
             yield return new WaitForSeconds(tempsEntreTextes);
 
-            // effacement progressif
+            // effacement progressif (optionnel, sinon vous pouvez l'enlever)
             for (int i = texteUI.text.Length - 1; i >= 0; i--)
             {
                 texteUI.text = texteUI.text.Substring(0, i);
@@ -38,7 +45,8 @@ public class DialogueIntro : MonoBehaviour
             }
         }
 
-        // une fois terminé
-        texteUI.text = ""; // ou vous pouvez désactiver le panel si vous voulez
+        // une fois tous les textes terminés, cacher le panel
+        if (panel != null)
+            panel.SetActive(false);
     }
 }
