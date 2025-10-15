@@ -4558,6 +4558,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinNiv
       objectReference: {fileID: 0}
+    - target: {fileID: 3003183289860365238, guid: b45f8b8cb782c4c01a5d7027b5ddbba1, type: 3}
+      propertyPath: m_TagString
+      value: FinNiv3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607436234272138860, guid: b45f8b8cb782c4c01a5d7027b5ddbba1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607436234272138860, guid: b45f8b8cb782c4c01a5d7027b5ddbba1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607436234272138860, guid: b45f8b8cb782c4c01a5d7027b5ddbba1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
