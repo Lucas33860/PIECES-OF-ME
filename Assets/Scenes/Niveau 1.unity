@@ -523,14 +523,14 @@ MonoBehaviour:
   texteUI: {fileID: 974247783}
   textes:
   - Hello Trapa, you are finally awake. You were thrown away by the government after
-    the last war, because you and your robot siblings failed at winning the fight.
+    the end of the last war.
   - 'Now, you can start anew, but you have to find every pieces of you. This place
     is dangerous, you will have to face many dangers to find your full body. '
   - "Now, go and find what you\u2019ve lost."
   - With your head, you can roll around the world. Use the left and right arrows,
     or Q and D. You can sprint with leftshift. Good luck !
   vitesseEcriture: 0.03
-  tempsEntreTextes: 2.5
+  tempsEntreTextes: 4
   panel: {fileID: 1476441493}
 --- !u!4 &346949456
 Transform:
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1104,8 +1104,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -74.50496, y: -280.31763, z: -195.29471, w: 151.03804}
+  m_margin: {x: -199.73517, y: -337.24768, z: -334.99622, w: 86.10143}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2460,8 +2460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 175.59003, y: -103.21997}
-  m_SizeDelta: {x: -846.76, y: -599.82}
+  m_AnchoredPosition: {x: 347.99, y: -2.1599731}
+  m_SizeDelta: {x: 85.1, y: -53.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476441495
 MonoBehaviour:
@@ -2483,8 +2483,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 8331824473898674426, guid: 230301fc83d3a477f9755ecbb112ab8c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
