@@ -37,11 +37,11 @@ public class DialogueIntro : MonoBehaviour
             // attendre un peu avant d'effacer
             yield return new WaitForSeconds(tempsEntreTextes);
 
-            // effacement progressif (optionnel, sinon vous pouvez l'enlever)
+            // effacement progressif beaucoup plus rapide
             for (int i = texteUI.text.Length - 1; i >= 0; i--)
             {
                 texteUI.text = texteUI.text.Substring(0, i);
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSeconds(0.005f); // vitesse augmentée
             }
         }
 
