@@ -6,9 +6,6 @@ public class MenuPause : MonoBehaviour
     public GameObject menuPause;
     public static bool estEnPause = false;
 
-    [Header("Références")]
-    public PlayerMovement playerMovement; // 👈 à assigner dans l'inspecteur
-
     void Start()
     {
         menuPause.SetActive(false);
@@ -33,30 +30,16 @@ public class MenuPause : MonoBehaviour
     public void ResumeGame()
     {
         menuPause.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // Reprendre le temps
         estEnPause = false;
-
-        // ✅ On réactive les inputs du joueur
-        if (playerMovement != null)
-        {
-            playerMovement.EnableInputs();
-        }
-
         Debug.Log("🎮 Reprise du jeu");
     }
 
     public void PauseGame()
     {
         menuPause.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // Mettre le temps en pause
         estEnPause = true;
-
-        // ✅ On désactive les inputs du joueur
-        if (playerMovement != null)
-        {
-            playerMovement.DisableInputs();
-        }
-
         Debug.Log("⏸ Jeu en pause");
     }
 
