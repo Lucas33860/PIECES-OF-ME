@@ -5,6 +5,8 @@ public class PlayerRespawn : MonoBehaviour
     [HideInInspector] public Vector3 respawnPoint;  // Position de respawn
     public float deathY = -10f;                     // Limite sous la map
 
+    public AudioSource respawnSound;              // Son de respawn
+
     private Rigidbody2D rb;
 
     void Start()
@@ -27,6 +29,10 @@ public class PlayerRespawn : MonoBehaviour
         // Si le joueur tombe trop bas
         if (transform.position.y < deathY)
         {
+            if (!respawnSound.isPlaying)
+            {
+                respawnSound.Play();  // Joue le son de respawn une seule fois
+            }
             Respawn();
         }
     }
