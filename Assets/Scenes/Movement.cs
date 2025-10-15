@@ -30,61 +30,71 @@ public class Movement : MonoBehaviour
         transform.rotation = endRotation;
     }
 
-    void Update()
+void Update()
+{
+    // ✅ Si le jeu est en pause, on bloque tout
+    if (MenuPause.estEnPause)
     {
-        float moveInput = 0f;
-        float baseRotationSpeed = 360f; // Vitesse de rotation de base (degrés/seconde)
-        float rotationSpeed = baseRotationSpeed;
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        // On stoppe les sons de marche pour éviter qu'ils continuent en fond
+        if (audioSource.isPlaying)
         {
-            rotationSpeed *= 2f; // Double la vitesse de rotation quand on sprinte
+            audioSource.Stop();
         }
-
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            moveInput = -1f;
-            // Tourne plus vite vers la gauche
-            transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            moveInput = 1f;
-            // Tourne plus vite vers la droite
-            transform.Rotate(0f, 0f, -rotationSpeed * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-        }
-        else
-        {
-            if (audioSource.isPlaying)
-            {
-                audioSource.Pause();
-            }
-        }
-        // Plus besoin de coroutine pour la rotation continue
-
-        float maxCurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : maxSpeed;
-
-        targetSpeed = moveInput * maxCurrentSpeed;
-
-        if (Mathf.Abs(targetSpeed) > 0.01f)
-        {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
-        }
-        else
-        {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
-        }
-
-        transform.position += new Vector3(currentSpeed * Time.deltaTime, 0f, 0f);
+        currentSpeed = 0f; // empêche le perso de continuer à glisser
+        return;
     }
+
+    float moveInput = 0f;
+    float baseRotationSpeed = 360f; // Vitesse de rotation de base
+    float rotationSpeed = baseRotationSpeed;
+
+    if (Input.GetKey(KeyCode.LeftShift))
+    {
+        rotationSpeed *= 2f;
+    }
+
+    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+    {
+        moveInput = -1f;
+        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
+    else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+    {
+        moveInput = 1f;
+        transform.Rotate(0f, 0f, -rotationSpeed * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
+    else
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    float maxCurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : maxSpeed;
+
+    targetSpeed = moveInput * maxCurrentSpeed;
+
+    if (Mathf.Abs(targetSpeed) > 0.01f)
+    {
+        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+    }
+    else
+    {
+        currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
+    }
+
+    transform.position += new Vector3(currentSpeed * Time.deltaTime, 0f, 0f);
+}
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Boite"))

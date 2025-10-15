@@ -13,5 +13,9 @@ public class ChangeScene : MonoBehaviour
         {
             SceneManager.LoadScene("Niveau 3");
         }
+        if (other.CompareTag("FinNiv3"))
+        {
+            SceneManager.LoadScene("Niveau 4");
+        }
     }
 }
