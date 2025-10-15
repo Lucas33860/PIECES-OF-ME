@@ -39,6 +39,15 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         Gravity();
         animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
+
+        if (Keyboard.current.leftShiftKey.isPressed)
+        {
+            moveSpeed = sprintSpeed;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        }
     }
 
 
@@ -49,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         // Flip sprite based on movement direction
         if (horizontalMovement != 0 && isGrounded())
         {
-            playerSprite.localScale = new Vector3(Mathf.Sign(horizontalMovement), 1, 1);
+            playerSprite.localScale = new Vector3(Mathf.Sign(-horizontalMovement), 1, 1);
 
             if (!WalkSound.isPlaying)
             {
@@ -64,14 +73,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.leftShiftKey.isPressed)
-        {
-            moveSpeed = sprintSpeed;
-        }
-        else
-        {
-            moveSpeed = 5f;
-        }
+
     }
 
     private void Gravity()
