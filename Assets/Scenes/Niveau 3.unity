@@ -4912,8 +4912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -147.99994, y: 68}
-  m_SizeDelta: {x: 260.45, y: 237.94}
+  m_AnchoredPosition: {x: -126.09003, y: 79.33002}
+  m_SizeDelta: {x: 378.86, y: 299.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923688927
 MonoBehaviour:
@@ -5636,7 +5636,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -23.266228, y: -291.9159, z: -147.1072, w: 139.24905}
+  m_margin: {x: -53.89032, y: -308.24878, z: -177.73134, w: 122.91618}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6263,8 +6263,11 @@ MonoBehaviour:
   tmpWriter: {fileID: 1364911123}
   canvas: {fileID: 1622853386}
   textes:
-  - Now that you found your feet, you can jump with spacebar. Go and find the last
-    piece of you, so you can finally be free.
+  - 'Now that you found your feet, you can jump with <sprite name=tilemap_packed_135>.
+    You can still sprit with <sprite name=tilemap_packed_108> or <sprite name=tilemap_packed_137>.
+    Go and find the last piece of you, so you can finally be free.
+
+    <sprite name=tilemap_packed_74>'
   vitesseEcriture: 0.03
   tempsEntreTextes: 4
   panel: {fileID: 923688925}
