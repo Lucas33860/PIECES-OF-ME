@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CollisionDamage : MonoBehaviour
 {
+    public AudioSource DeathSound; // Son de dégât
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -22,6 +23,7 @@ public class CollisionDamage : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Player is dead");
+            DeathSound.Play();  // Joue le son de mort
         }
     }
 }

@@ -14,7 +14,7 @@ public class Ennemi : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 0.5f)
+        if (timer >= 0.75f)
         {
             SpawnBullet();
             if (EnemyShootSound != null && EnemyShootSound.clip != null)

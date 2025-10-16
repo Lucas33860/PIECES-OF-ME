@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {x: 0, y: 0, z: 0}
   deathY: -8
-  respawnSound: {fileID: 0}
+  respawnSound: {fileID: -700598330835685802}
 --- !u!114 &3763275121216586723
 MonoBehaviour:
   m_ObjectHideFlags: 0

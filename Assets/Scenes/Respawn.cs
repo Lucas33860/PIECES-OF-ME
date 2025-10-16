@@ -19,6 +19,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boss"))
         {
+            respawnSound.Play();  // Joue le son de respawn
             Debug.Log("Le joueur a touché le boss !");
             Respawn();
         }
