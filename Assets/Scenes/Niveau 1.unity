@@ -529,17 +529,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texteUI: {fileID: 974247783}
+  tmpWriter: {fileID: 974247786}
+  canvas: {fileID: 1652396997}
   textes:
   - Hello Trapa, you are finally awake. You were thrown away by the government after
     the end of the last war.
   - 'Now, you can start anew, but you have to find every pieces of you. This place
     is dangerous, you will have to face many dangers to find your full body. '
   - "Now, go and find what you\u2019ve lost."
-  - With your head, you can roll around the world. Use the left and right arrows,
-    or Q and D. You can sprint with leftshift. Good luck !
+  - With your head, you can roll around the world. Use the <sprite name=tilemap_packed_109> 
+    and right arrows, or Q and D. You can sprint with leftshift. Good luck !
   vitesseEcriture: 0.03
   tempsEntreTextes: 5
   panel: {fileID: 1476441493}
+  TextIndex: 0
 --- !u!4 &346949456
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,6 +1216,7 @@ GameObject:
   - component: {fileID: 974247785}
   - component: {fileID: 974247784}
   - component: {fileID: 974247783}
+  - component: {fileID: 974247786}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1240,7 +1244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '<sprite name=tilemap_packed_109> bonjour '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 45ed91c27208f478d8cefb543dfcd05f, type: 2}
   m_sharedMaterial: {fileID: -5824615032517457660, guid: 45ed91c27208f478d8cefb543dfcd05f, type: 2}
@@ -1249,7 +1253,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1338,6 +1342,69 @@ RectTransform:
   m_AnchoredPosition: {x: -124.99963, y: -433.1319}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &974247786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974247782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 0}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 0
+  useDefaultKeywordDatabase: 0
+  initDatabase: 1
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!4 &987308383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1736073074388584861, guid: e38382464dc2046dea5ad7d9e8dcf81d, type: 3}
