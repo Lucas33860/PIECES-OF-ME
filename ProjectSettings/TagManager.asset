@@ -14,6 +14,8 @@ TagManager:
   - Boite
   - Jambes
   - Bras
+  - Void
+  - "Ecras\xE9"
   layers:
   - Default
   - TransparentFX

@@ -23,7 +23,7 @@ public class CollisionDamage : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Player is dead");
-            DeathSound.Play();  // Joue le son de mort
+            DeathSound.Play();  // Joue le son de dégât
         }
     }
 }
