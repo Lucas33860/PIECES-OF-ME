@@ -5524,6 +5524,7 @@ GameObject:
   - component: {fileID: 1364911120}
   - component: {fileID: 1364911122}
   - component: {fileID: 1364911121}
+  - component: {fileID: 1364911123}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5579,7 +5580,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5649,6 +5650,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364911119}
   m_CullTransparentMesh: 1
+--- !u!114 &1364911123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364911119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf9594e2a3b8eb4eaf3cc57f263076f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTextEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterShown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSkipWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnResetWriter:
+    m_PersistentCalls:
+      m_Calls: []
+  keywordDatabase: {fileID: 0}
+  sceneKeywordDatabase: {fileID: 0}
+  database: {fileID: 11400000, guid: 290ad04254a96934aa269d5b8d258008, type: 2}
+  maySkip: 1
+  writeOnStart: 1
+  writeOnNewText: 1
+  useScaledTime: 1
+  delays:
+    delay: 0.035
+    whitespaceDelay: 0
+    whitespaceDelayType: 0
+    linebreakDelay: 0
+    linebreakDelayType: 0
+    punctuationDelay: 0
+    punctuationDelayType: 0
+    visibleDelay: 0
+    visibleDelayType: 0
+  sceneCommands:
+    _serializedList: []
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 0
+  initDatabase: 1
+  eventsEnabled: 0
+  commandsEnabled: 1
 --- !u!1001 &1421505574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6196,12 +6260,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texteUI: {fileID: 1364911121}
+  tmpWriter: {fileID: 1364911123}
+  canvas: {fileID: 1622853386}
   textes:
   - Now that you found your feet, you can jump with spacebar. Go and find the last
     piece of you, so you can finally be free.
   vitesseEcriture: 0.03
   tempsEntreTextes: 4
   panel: {fileID: 923688925}
+  TextIndex: -1
+  OnEndDialog:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1839757539
 Transform:
   m_ObjectHideFlags: 0

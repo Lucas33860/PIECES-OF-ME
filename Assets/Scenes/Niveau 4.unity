@@ -610,8 +610,9 @@ MonoBehaviour:
   tmpWriter: {fileID: 1128381237}
   canvas: {fileID: 1982464186}
   textes:
-  - Good job ! You found all your pieces ! Now, you can enjoy your free life after
-    all this journey. Go discover the world and live your life as you want !
+  - "Good job ! You found all your pieces ! Now, you can enjoy your free life after
+    all this journey. Go discover the world and live your life as you want ! \n<sprite
+    name=tilemap_packed_74>"
   vitesseEcriture: 0.03
   tempsEntreTextes: 4
   panel: {fileID: 579622202}

@@ -32,7 +32,7 @@ public class DialogueIntro : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (tmpWriter.CurrentIndex == tmpWriter.CharData.Count - 1)
             {
