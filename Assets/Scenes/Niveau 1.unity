@@ -540,8 +540,8 @@ MonoBehaviour:
   - "Now, go and find what you\u2019ve lost. \n<sprite name=tilemap_packed_74>"
   - "With your head, you can roll around the world. Use the <sprite name=tilemap_packed_109> 
     and <sprite name=tilemap_packed_111> , or <sprite name=tilemap_packed_59> and
-    <sprite name=tilemap_packed_80>. You can sprint with <sprite name=tilemap_packed_108>
-    or <sprite name=tilemap_packed_137>. Good luck ! \n<sprite name=tilemap_packed_74>"
+    <sprite name=tilemap_packed_80>. You can sprint with or <sprite name=tilemap_packed_137>.
+    Good luck ! \n<sprite name=tilemap_packed_74>"
   vitesseEcriture: 0.03
   tempsEntreTextes: 5
   panel: {fileID: 1476441493}
@@ -3248,9 +3248,9 @@ SceneRoots:
   - {fileID: 239747365}
   - {fileID: 1615782655}
   - {fileID: 993017176}
-  - {fileID: 1652396997}
-  - {fileID: 109932591}
-  - {fileID: 346949456}
   - {fileID: 988241974}
   - {fileID: 1830468232}
   - {fileID: 1642367492}
+  - {fileID: 1652396997}
+  - {fileID: 109932591}
+  - {fileID: 346949456}
